@@ -17,13 +17,12 @@
 
 package net.smart.render.statistics.playerapi;
 
-import net.minecraft.client.entity.*;
-import net.minecraft.entity.player.*;
-
-import api.player.client.*;
-
-import net.smart.render.*;
-import net.smart.render.statistics.*;
+import api.player.client.ClientPlayerAPI;
+import api.player.client.IClientPlayerAPI;
+import net.minecraft.client.entity.EntityPlayerSP;
+import net.minecraft.entity.player.EntityPlayer;
+import net.smart.render.SmartRenderInfo;
+import net.smart.render.statistics.IEntityPlayerSP;
 
 public abstract class SmartStatistics
 {

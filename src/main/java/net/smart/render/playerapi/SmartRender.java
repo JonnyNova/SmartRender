@@ -17,10 +17,11 @@
 
 package net.smart.render.playerapi;
 
-import api.player.model.*;
-import api.player.render.*;
-
-import net.smart.render.*;
+import api.player.model.IModelPlayerAPI;
+import api.player.model.ModelPlayerAPI;
+import api.player.render.IRenderPlayerAPI;
+import api.player.render.RenderPlayerAPI;
+import net.smart.render.SmartRenderInfo;
 
 public abstract class SmartRender
 {

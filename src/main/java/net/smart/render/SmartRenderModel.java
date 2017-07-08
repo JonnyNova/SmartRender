@@ -20,6 +20,7 @@ package net.smart.render;
 import java.lang.reflect.*;
 import java.util.*;
 
+import net.minecraft.util.math.MathHelper;
 import org.lwjgl.opengl.GL11;
 
 import net.minecraft.client.model.*;
@@ -246,7 +247,7 @@ public class SmartRenderModel extends SmartRenderContext
 		bipedOuter.previous = prevOuterRenderData;
 
 		bipedOuter.rotateAngleY = actualRotation / RadiantToAngle;
-		bipedOuter.fadeRotateAngleY = entity.ridingEntity == null;
+		bipedOuter.fadeRotateAngleY = !entity.isRiding();
 
 		imp.animateHeadRotation(totalHorizontalDistance, currentHorizontalSpeed, totalTime, viewHorizontalAngelOffset, viewVerticalAngelOffset, factor);
 
@@ -258,11 +259,12 @@ public class SmartRenderModel extends SmartRenderContext
 		if(mp.isRiding)
 			imp.animateRiding(totalHorizontalDistance, currentHorizontalSpeed, totalTime, viewHorizontalAngelOffset, viewVerticalAngelOffset, factor);
 
-		if(mp.heldItemLeft != 0)
-			imp.animateLeftArmItemHolding(totalHorizontalDistance, currentHorizontalSpeed, totalTime, viewHorizontalAngelOffset, viewVerticalAngelOffset, factor);
-
-		if(mp.heldItemRight != 0)
-			imp.animateRightArmItemHolding(totalHorizontalDistance, currentHorizontalSpeed, totalTime, viewHorizontalAngelOffset, viewVerticalAngelOffset, factor);
+		// TODO FIXME restore these
+//		if(mp.heldItemLeft != 0)
+//			imp.animateLeftArmItemHolding(totalHorizontalDistance, currentHorizontalSpeed, totalTime, viewHorizontalAngelOffset, viewVerticalAngelOffset, factor);
+//
+//		if(mp.heldItemRight != 0)
+//			imp.animateRightArmItemHolding(totalHorizontalDistance, currentHorizontalSpeed, totalTime, viewHorizontalAngelOffset, viewVerticalAngelOffset, factor);
 
 		if(mp.swingProgress > -9990F)
 		{
@@ -275,8 +277,9 @@ public class SmartRenderModel extends SmartRenderContext
 
 		imp.animateArms(totalHorizontalDistance, currentHorizontalSpeed, totalTime, viewHorizontalAngelOffset, viewVerticalAngelOffset, factor);
 
-		if(mp.aimedBow)
-			imp.animateBowAiming(totalHorizontalDistance, currentHorizontalSpeed, totalTime, viewHorizontalAngelOffset, viewVerticalAngelOffset, factor);
+		// TODO FIXME restore this
+//		if(mp.aimedBow)
+//			imp.animateBowAiming(totalHorizontalDistance, currentHorizontalSpeed, totalTime, viewHorizontalAngelOffset, viewVerticalAngelOffset, factor);
 
 		if(bipedOuter.previous != null && !bipedOuter.fadeRotateAngleX)
 			bipedOuter.previous.rotateAngleX = bipedOuter.rotateAngleX;
@@ -330,14 +333,14 @@ public class SmartRenderModel extends SmartRenderContext
 
 	public void animateLeftArmItemHolding()
 	{
-		bipedLeftArm.rotateAngleX = bipedLeftArm.rotateAngleX * 0.5F - 0.3141593F * mp.heldItemLeft;
+		bipedLeftArm.rotateAngleX = bipedLeftArm.rotateAngleX * 0.5F - 0.3141593F;// * mp.heldItemLeft;
 	}
 
 	public void animateRightArmItemHolding()
 	{
-		bipedRightArm.rotateAngleX = bipedRightArm.rotateAngleX * 0.5F - 0.3141593F * mp.heldItemRight;
-		if(mp.heldItemRight == 3)
-			bipedRightArm.rotateAngleY = -0.5235988F;
+		bipedRightArm.rotateAngleX = bipedRightArm.rotateAngleX * 0.5F - 0.3141593F;// * mp.heldItemRight;
+//		if(mp.heldItemRight == 3)
+//			bipedRightArm.rotateAngleY = -0.5235988F;
 	}
 
 	public void animateWorkingBody()

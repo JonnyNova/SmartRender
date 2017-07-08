@@ -20,8 +20,7 @@ package net.smart.render;
 import net.minecraft.client.model.*;
 import net.minecraft.client.renderer.*;
 import net.minecraft.entity.player.*;
-import net.minecraft.util.*;
-
+import net.minecraft.util.math.MathHelper;
 import org.lwjgl.opengl.GL11;
 
 public class ModelCapeRenderer extends ModelSpecialRenderer

@@ -18,7 +18,7 @@
 package net.smart.render.statistics;
 
 import net.minecraft.entity.player.*;
-import net.minecraft.util.*;
+import net.minecraft.util.math.MathHelper;
 
 public class SmartStatistics extends SmartStatisticsContext
 {

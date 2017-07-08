@@ -1,10 +1,11 @@
 [{
-  "modid": "SmartRender",
+  "modid": "smartrender",
   "name": "Smart Render",
-  "version": "2.2",
-  "mcversion": "1.8.9",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
   "description": "Replaces the vanilla render model for the player with a much more useable one:\n\n * implement better animations with less code\n * attach additional renderers wherever you want\n * only worry about the animations of your own renderers",
   "credits": "",
-  "url": "http://www.minecraftforum.net/topic/361430-",
-  "authors": [ "Divisor" ]
+  "requiredMods": [ "Forge@[12.18.1.2011,)" ],
+  "url": "https://github.com/JonnyNova/SmartRender",
+  "authors": [ "Divisor", "JonnyNova" ]
 }]

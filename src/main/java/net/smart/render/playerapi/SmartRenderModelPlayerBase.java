@@ -82,9 +82,6 @@ public class SmartRenderModelPlayerBase extends ModelPlayerBase implements IMode
 			modelPlayer.bipedLeftArmwear = bipedLeftArmwear;
 			modelPlayer.bipedRightLegwear = bipedRightLegwear;
 			modelPlayer.bipedLeftLegwear = bipedLeftLegwear;
-
-			modelPlayerAPI.setBipedCapeField(bipedCloak);
-			modelPlayerAPI.setBipedDeadmau5HeadField(bipedEars);
 		}
 	}
 

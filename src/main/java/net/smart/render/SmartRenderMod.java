@@ -28,9 +28,13 @@ import net.minecraftforge.fml.common.gameevent.TickEvent.*;
 import net.smart.render.statistics.*;
 import net.smart.utilities.*;
 
-@Mod(modid = "SmartRender", name = "Smart Render", version = "2.2", clientSideOnly = true, dependencies = "required-after:PlayerAPI@[1.0,)")
+@Mod(modid = SmartRenderMod.ID, name = SmartRenderMod.NAME, version = SmartRenderMod.VERSION, useMetadata = true, clientSideOnly = true)
 public class SmartRenderMod
 {
+	static final String ID = "smartrender";
+	static final String NAME = "Smart Render";
+	static final String VERSION = "@VERSION@";
+
 	private static boolean addRenderer = true;
 
 	private boolean hasRenderer = false;
